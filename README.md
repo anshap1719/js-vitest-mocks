@@ -1,5 +1,7 @@
 # Vitest Mocks for Google Maps
 
+## Forked from https://github.com/googlemaps/js-jest-mocks
+
 [![npm](https://img.shields.io/npm/v/@anshulsanghi/googlemaps-vitest-mocks)](https://www.npmjs.com/package/@anshulsanghi/googlemaps-vitest-mocks)
 ![Build](https://github.com/anshap1719/js-vitest-mocks/workflows/Test/badge.svg)
 ![Release](https://github.com/anshap1719/js-vitest-mocks/workflows/Release/badge.svg)
