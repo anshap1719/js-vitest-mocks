@@ -18,23 +18,23 @@ import { LatLng } from "../coordinates/latlng";
 import { MVCObject } from "../event/mvcobject";
 
 export class InfoWindow_ extends MVCObject implements google.maps.InfoWindow {
-  public close = jest.fn().mockImplementation((): void => null);
-  public focus = jest.fn();
-  public getContent = jest
+  public close = vi.fn().mockImplementation((): void => null);
+  public focus = vi.fn();
+  public getContent = vi
     .fn()
     .mockImplementation((): string | Element | null | Text | undefined => {
-      return jest.fn() as unknown as Element;
+      return vi.fn() as unknown as Element;
     });
-  public getPosition = jest
+  public getPosition = vi
     .fn()
     .mockImplementation(
       (): google.maps.LatLng | null | undefined =>
         new LatLng({ lat: 0, lng: 0 })
     );
-  public getZIndex = jest
+  public getZIndex = vi
     .fn()
     .mockImplementation((): number | null | undefined => 1);
-  public open = jest
+  public open = vi
     .fn()
     .mockImplementation(
       (
@@ -45,20 +45,20 @@ export class InfoWindow_ extends MVCObject implements google.maps.InfoWindow {
         anchor?: google.maps.MVCObject
       ): void => null
     );
-  public setContent = jest
+  public setContent = vi
     .fn()
     .mockImplementation((content?: string | Element | Text): void => null);
-  public setOptions = jest
+  public setOptions = vi
     .fn()
     .mockImplementation(
       (options?: google.maps.InfoWindowOptions): void => null
     );
-  public setPosition = jest
+  public setPosition = vi
     .fn()
     .mockImplementation(
       (position?: google.maps.LatLng | google.maps.LatLngLiteral): void => null
     );
-  public setZIndex = jest
+  public setZIndex = vi
     .fn()
     .mockImplementation((zIndex?: number): void => null);
   constructor(opts?: google.maps.InfoWindowOptions) {

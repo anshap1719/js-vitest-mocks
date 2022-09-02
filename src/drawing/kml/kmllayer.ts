@@ -19,44 +19,44 @@ import { MapsEventListener } from "../../maps/event/event";
 import { MVCObject } from "../../maps/event/mvcobject";
 
 export class KmlLayer extends MVCObject implements google.maps.KmlLayer {
-  public getDefaultViewport = jest
+  public getDefaultViewport = vi
     .fn()
     .mockImplementation((): LatLngBounds | null => null);
-  public getMap = jest
+  public getMap = vi
     .fn()
     .mockImplementation(
       (): google.maps.Map | google.maps.StreetViewPanorama | null | undefined =>
         null
     );
-  public getMetadata = jest
+  public getMetadata = vi
     .fn()
     .mockImplementation((): google.maps.KmlLayerMetadata | null => null);
-  public getStatus = jest
+  public getStatus = vi
     .fn()
     .mockImplementation((): google.maps.KmlLayerStatus | null => null);
-  public getUrl = jest
+  public getUrl = vi
     .fn()
     .mockImplementation((): string | null | undefined => null);
-  public getZIndex = jest
+  public getZIndex = vi
     .fn()
     .mockImplementation((): number | null | undefined => null);
-  public setMap = jest
+  public setMap = vi
     .fn()
     .mockImplementation((map: google.maps.Map | null): void => {
       return;
     });
-  public setOptions = jest
+  public setOptions = vi
     .fn()
     .mockImplementation((options: google.maps.KmlLayerOptions): void => {
       return;
     });
-  public setUrl = jest.fn().mockImplementation((url: string): void => {
+  public setUrl = vi.fn().mockImplementation((url: string): void => {
     return;
   });
-  public setZIndex = jest.fn().mockImplementation((zIndex: number): void => {
+  public setZIndex = vi.fn().mockImplementation((zIndex: number): void => {
     return;
   });
-  public addListener = jest
+  public addListener = vi
     .fn()
     .mockImplementation(
       (

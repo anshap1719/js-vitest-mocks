@@ -23,12 +23,12 @@ export class StreetViewPanorama
   implements google.maps.StreetViewPanorama
 {
   public controls: MVCArray<HTMLElement>[] = [];
-  public getLinks = jest
+  public getLinks = vi
     .fn()
     .mockImplementation(
       (): (google.maps.StreetViewLink | null)[] | null => null
     );
-  public getLocation = jest
+  public getLocation = vi
     .fn()
     .mockImplementation((): google.maps.StreetViewLocation | null => ({
       description: null,
@@ -36,29 +36,29 @@ export class StreetViewPanorama
       pano: "pano",
       shortDescription: null,
     }));
-  public getMotionTracking = jest.fn().mockImplementation((): boolean => false);
-  public getPano = jest.fn().mockImplementation((): string => "pano");
-  public getPhotographerPov = jest
+  public getMotionTracking = vi.fn().mockImplementation((): boolean => false);
+  public getPano = vi.fn().mockImplementation((): string => "pano");
+  public getPhotographerPov = vi
     .fn()
     .mockImplementation(
       (): google.maps.StreetViewPov => ({ heading: 0, pitch: 0 })
     );
-  public getPosition = jest
+  public getPosition = vi
     .fn()
     .mockImplementation((): google.maps.LatLng | null => new LatLng(1, 1));
-  public getPov = jest
+  public getPov = vi
     .fn()
     .mockImplementation(
       (): google.maps.StreetViewPov => ({ heading: 0, pitch: 0 })
     );
-  public getStatus = jest
+  public getStatus = vi
     .fn()
     .mockImplementation(
       (): google.maps.StreetViewStatus => google.maps.StreetViewStatus.OK
     );
-  public getVisible = jest.fn().mockImplementation((): boolean => true);
-  public getZoom = jest.fn().mockImplementation((): number => 0);
-  public registerPanoProvider = jest
+  public getVisible = vi.fn().mockImplementation((): boolean => true);
+  public getZoom = vi.fn().mockImplementation((): number => 0);
+  public registerPanoProvider = vi
     .fn()
     .mockImplementation(
       (
@@ -66,31 +66,29 @@ export class StreetViewPanorama
         opt_options?: google.maps.PanoProviderOptions
       ): void => null
     );
-  public setLinks = jest
+  public setLinks = vi
     .fn()
     .mockImplementation(
       (inks: (google.maps.StreetViewLink | null)[] | null): void => null
     );
-  public setMotionTracking = jest
+  public setMotionTracking = vi
     .fn()
     .mockImplementation((motionTracking: boolean): void => null);
-  public setOptions = jest
+  public setOptions = vi
     .fn()
     .mockImplementation(
       (options: google.maps.StreetViewPanoramaOptions | null): void => null
     );
-  public setPano = jest.fn().mockImplementation((pano: string): void => null);
-  public setPosition = jest
+  public setPano = vi.fn().mockImplementation((pano: string): void => null);
+  public setPosition = vi
     .fn()
     .mockImplementation(
       (latLng: google.maps.LatLng | null | google.maps.LatLngLiteral): void =>
         null
     );
-  public setPov = jest
+  public setPov = vi
     .fn()
     .mockImplementation((pov: google.maps.StreetViewPov): void => null);
-  public setVisible = jest
-    .fn()
-    .mockImplementation((flag: boolean): void => null);
-  public setZoom = jest.fn().mockImplementation((zoom: number): void => null);
+  public setVisible = vi.fn().mockImplementation((flag: boolean): void => null);
+  public setZoom = vi.fn().mockImplementation((zoom: number): void => null);
 }

@@ -22,36 +22,34 @@ export class Circle extends MVCObject implements google.maps.Circle {
   constructor(opt?: google.maps.CircleOptions) {
     super();
   }
-  public getBounds = jest
+  public getBounds = vi
     .fn()
     .mockImplementation(
       (): google.maps.LatLngBounds | null | undefined => null
     );
-  public getCenter = jest
+  public getCenter = vi
     .fn()
     .mockImplementation(
       (): google.maps.LatLng => new LatLng({ lat: 0, lng: 0 })
     );
-  public getDraggable = jest.fn().mockImplementation((): boolean => true);
-  public getEditable = jest.fn().mockImplementation((): boolean => true);
-  public getMap = jest
+  public getDraggable = vi.fn().mockImplementation((): boolean => true);
+  public getEditable = vi.fn().mockImplementation((): boolean => true);
+  public getMap = vi
     .fn()
     .mockImplementation((): google.maps.Map => new Map_(null));
-  public getRadius = jest.fn().mockImplementation((): number => 0);
-  public getVisible = jest.fn().mockImplementation((): boolean => true);
-  public setCenter = jest
+  public getRadius = vi.fn().mockImplementation((): number => 0);
+  public getVisible = vi.fn().mockImplementation((): boolean => true);
+  public setCenter = vi
     .fn()
     .mockImplementation(
       (center: google.maps.LatLng | google.maps.LatLngLiteral) => {}
     );
-  public setDraggable = jest
-    .fn()
-    .mockImplementation((draggable: boolean) => {});
-  public setEditable = jest.fn().mockImplementation((editable: boolean) => {});
-  public setMap = jest.fn().mockImplementation((map: google.maps.Map) => {});
-  public setOptions = jest
+  public setDraggable = vi.fn().mockImplementation((draggable: boolean) => {});
+  public setEditable = vi.fn().mockImplementation((editable: boolean) => {});
+  public setMap = vi.fn().mockImplementation((map: google.maps.Map) => {});
+  public setOptions = vi
     .fn()
     .mockImplementation((options: google.maps.CircleOptions) => {});
-  public setRadius = jest.fn().mockImplementation((radius: number) => {});
-  public setVisible = jest.fn().mockImplementation((visible: boolean) => {});
+  public setRadius = vi.fn().mockImplementation((radius: number) => {});
+  public setVisible = vi.fn().mockImplementation((visible: boolean) => {});
 }

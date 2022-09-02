@@ -22,14 +22,14 @@ export class Data extends MVCObject implements google.maps.Data {
   constructor(opt?: google.maps.Data.DataOptions | null) {
     super();
   }
-  public static Feature = jest
+  public static Feature = vi
     .fn()
     .mockImplementation(
       (
         options?: google.maps.Data.FeatureOptions | null
       ): google.maps.Data.Feature => new Feature(options)
     );
-  public add = jest
+  public add = vi
     .fn()
     .mockImplementation(
       (
@@ -41,7 +41,7 @@ export class Data extends MVCObject implements google.maps.Data {
         return null;
       }
     );
-  public addGeoJson = jest
+  public addGeoJson = vi
     .fn()
     .mockImplementation(
       (
@@ -51,40 +51,40 @@ export class Data extends MVCObject implements google.maps.Data {
         return [];
       }
     );
-  public contains = jest
+  public contains = vi
     .fn()
     .mockImplementation((feature: google.maps.Data.Feature): boolean => {
       return false;
     });
-  public forEach = jest
+  public forEach = vi
     .fn()
     .mockImplementation(
       (callback: (a: google.maps.Data.Feature) => void): void => {
         return null;
       }
     );
-  public getControlPosition = jest
+  public getControlPosition = vi
     .fn()
     .mockImplementation((): google.maps.ControlPosition => {
       return ControlPosition.BOTTOM_CENTER;
     });
-  public getControls = jest.fn().mockImplementation((): string[] | null => {
+  public getControls = vi.fn().mockImplementation((): string[] | null => {
     return null;
   });
-  public getDrawingMode = jest.fn().mockImplementation((): string[] | null => {
+  public getDrawingMode = vi.fn().mockImplementation((): string[] | null => {
     return null;
   });
-  public getFeatureById = jest
+  public getFeatureById = vi
     .fn()
     .mockImplementation(
       (id: number | string): google.maps.Data.Feature | undefined => {
         return undefined;
       }
     );
-  public getMap = jest.fn().mockImplementation((): google.maps.Map | null => {
+  public getMap = vi.fn().mockImplementation((): google.maps.Map | null => {
     return null;
   });
-  public getStyle = jest
+  public getStyle = vi
     .fn()
     .mockImplementation(
       ():
@@ -94,7 +94,7 @@ export class Data extends MVCObject implements google.maps.Data {
         return null;
       }
     );
-  public loadGeoJson = jest
+  public loadGeoJson = vi
     .fn()
     .mockImplementation(
       (
@@ -105,7 +105,7 @@ export class Data extends MVCObject implements google.maps.Data {
         return null;
       }
     );
-  public overrideStyle = jest
+  public overrideStyle = vi
     .fn()
     .mockImplementation(
       (
@@ -115,39 +115,39 @@ export class Data extends MVCObject implements google.maps.Data {
         return null;
       }
     );
-  public remove = jest
+  public remove = vi
     .fn()
     .mockImplementation((feature: google.maps.Data.Feature): void => {
       return null;
     });
-  public revertStyle = jest
+  public revertStyle = vi
     .fn()
     .mockImplementation((feature?: google.maps.Data.Feature | null): void => {
       return null;
     });
-  public setControlPosition = jest
+  public setControlPosition = vi
     .fn()
     .mockImplementation(
       (controlPosition: google.maps.ControlPosition): void => {
         return null;
       }
     );
-  public setControls = jest
+  public setControls = vi
     .fn()
     .mockImplementation((controls: string[] | null): void => {
       return null;
     });
-  public setDrawingMode = jest
+  public setDrawingMode = vi
     .fn()
     .mockImplementation((drawingMode: string | null): void => {
       return null;
     });
-  public setMap = jest
+  public setMap = vi
     .fn()
     .mockImplementation((map: google.maps.Map | null): void => {
       return null;
     });
-  public setStyle = jest
+  public setStyle = vi
     .fn()
     .mockImplementation(
       (
@@ -159,7 +159,7 @@ export class Data extends MVCObject implements google.maps.Data {
         return null;
       }
     );
-  public toGeoJson = jest
+  public toGeoJson = vi
     .fn()
     .mockImplementation((callback: (a: object) => void): void => {
       return null;

@@ -29,7 +29,7 @@ export class Size implements google.maps.Size {
   equals(other: Size): boolean {
     return other.height === this.height && other.width === this.width;
   }
-  toString = jest.fn().mockImplementation((): string => {
+  toString = vi.fn().mockImplementation((): string => {
     return "";
   });
 }

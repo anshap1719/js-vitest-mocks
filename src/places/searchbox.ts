@@ -20,17 +20,17 @@ export class SearchBox
   extends MVCObject
   implements google.maps.places.SearchBox
 {
-  public getBounds = jest
+  public getBounds = vi
     .fn()
     .mockImplementation(
       (): google.maps.LatLngBounds | null | undefined => null
     );
-  public getPlaces = jest
+  public getPlaces = vi
     .fn()
     .mockImplementation((): google.maps.places.PlaceResult[] => [
       { name: "" } as google.maps.places.PlaceResult,
     ]);
-  public setBounds = jest
+  public setBounds = vi
     .fn()
     .mockImplementation(
       (

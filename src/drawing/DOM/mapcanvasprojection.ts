@@ -23,7 +23,7 @@ export class MapCanvasProjection
   extends MVCObject
   implements google.maps.MapCanvasProjection
 {
-  public fromContainerPixelToLatLng = jest
+  public fromContainerPixelToLatLng = vi
     .fn()
     .mockImplementation(
       (
@@ -31,7 +31,7 @@ export class MapCanvasProjection
         nowrap?: boolean
       ): google.maps.LatLng | null => new LatLng(0, 0)
     );
-  public fromDivPixelToLatLng = jest
+  public fromDivPixelToLatLng = vi
     .fn()
     .mockImplementation(
       (
@@ -39,21 +39,21 @@ export class MapCanvasProjection
         nowrap?: boolean
       ): google.maps.LatLng | null => new LatLng(0, 0)
     );
-  public fromLatLngToContainerPixel = jest
+  public fromLatLngToContainerPixel = vi
     .fn()
     .mockImplementation(
       (latLng: google.maps.LatLng | null): google.maps.Point | null =>
         new Point(0, 0)
     );
-  public fromLatLngToDivPixel = jest
+  public fromLatLngToDivPixel = vi
     .fn()
     .mockImplementation(
       (latLng: google.maps.LatLng | null): google.maps.Point => new Point(0, 0)
     );
-  public getVisibleRegion = jest
+  public getVisibleRegion = vi
     .fn()
     .mockImplementation(
       (): google.maps.VisibleRegion | null => new VisibleRegion()
     );
-  public getWorldWidth = jest.fn().mockImplementation((): number => 0);
+  public getWorldWidth = vi.fn().mockImplementation((): number => 0);
 }

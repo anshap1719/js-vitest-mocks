@@ -21,31 +21,31 @@ export class Polyline extends MVCObject implements google.maps.Polyline {
     super();
   }
 
-  public getDraggable = jest.fn().mockImplementation((): boolean => false);
-  public getEditable = jest.fn().mockImplementation((): boolean => false);
-  public getMap = jest
+  public getDraggable = vi.fn().mockImplementation((): boolean => false);
+  public getEditable = vi.fn().mockImplementation((): boolean => false);
+  public getMap = vi
     .fn()
     .mockImplementation((): google.maps.Map => ({} as google.maps.Map));
-  public getPath = jest
+  public getPath = vi
     .fn()
     .mockImplementation(
       (): google.maps.MVCArray<google.maps.LatLng> =>
         ({} as google.maps.MVCArray<google.maps.LatLng>)
     );
-  public getVisible = jest.fn().mockImplementation((): boolean => false);
-  public setDraggable = jest
+  public getVisible = vi.fn().mockImplementation((): boolean => false);
+  public setDraggable = vi
     .fn()
     .mockImplementation((draggable: boolean): void => {});
-  public setEditable = jest
+  public setEditable = vi
     .fn()
     .mockImplementation((editable: boolean): void => {});
-  public setMap = jest
+  public setMap = vi
     .fn()
     .mockImplementation((map: google.maps.Map): void => {});
-  public setOptions = jest
+  public setOptions = vi
     .fn()
     .mockImplementation((options: google.maps.PolylineOptions): void => {});
-  public setPath = jest
+  public setPath = vi
     .fn()
     .mockImplementation(
       (
@@ -55,7 +55,7 @@ export class Polyline extends MVCObject implements google.maps.Polyline {
           | google.maps.LatLngLiteral[]
       ): void => {}
     );
-  public setVisible = jest
+  public setVisible = vi
     .fn()
     .mockImplementation((visible: boolean): void => {});
 }

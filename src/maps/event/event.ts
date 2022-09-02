@@ -15,11 +15,11 @@
  */
 
 export const MapsEventListener: google.maps.MapsEventListener = {
-  remove: jest.fn(),
+  remove: vi.fn(),
 };
 
 export const event: typeof google.maps.event = {
-  addDomListener: jest
+  addDomListener: vi
     .fn()
     .mockImplementation(
       (
@@ -29,7 +29,7 @@ export const event: typeof google.maps.event = {
         capture?: boolean
       ): google.maps.MapsEventListener => MapsEventListener
     ),
-  addDomListenerOnce: jest
+  addDomListenerOnce: vi
     .fn()
     .mockImplementation(
       (
@@ -39,7 +39,7 @@ export const event: typeof google.maps.event = {
         capture?: boolean
       ): google.maps.MapsEventListener => MapsEventListener
     ),
-  addListener: jest
+  addListener: vi
     .fn()
     .mockImplementation(
       (
@@ -48,7 +48,7 @@ export const event: typeof google.maps.event = {
         handler: Function
       ): google.maps.MapsEventListener => MapsEventListener
     ),
-  addListenerOnce: jest
+  addListenerOnce: vi
     .fn()
     .mockImplementation(
       (
@@ -57,23 +57,23 @@ export const event: typeof google.maps.event = {
         handler: Function
       ): google.maps.MapsEventListener => MapsEventListener
     ),
-  clearInstanceListeners: jest
+  clearInstanceListeners: vi
     .fn()
     .mockImplementation((instance: object): void => null),
-  clearListeners: jest
+  clearListeners: vi
     .fn()
     .mockImplementation((instance: object, eventName: string): void => null),
-  hasListeners: jest
+  hasListeners: vi
     .fn()
     .mockImplementation(
       (instance: object, eventName: string): boolean => false
     ),
-  removeListener: jest
+  removeListener: vi
     .fn()
     .mockImplementation(
       (listener: google.maps.MapsEventListener): void => null
     ),
-  trigger: jest
+  trigger: vi
     .fn()
     .mockImplementation(
       (instance: object, eventName: string, ...eventArgs: any[]): void => null

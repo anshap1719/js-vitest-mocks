@@ -54,7 +54,7 @@ const initialize = function (): void {
   mockInstances.clearAll();
   (global as any).google = {
     maps: {
-      ImageMapType: jest.fn(),
+      ImageMapType: vi.fn(),
       Marker: Marker,
       Map: Map_,
       Data: Data,

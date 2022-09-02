@@ -43,7 +43,7 @@ export class Map_ extends MVCObject implements google.maps.Map {
     this.mapTypes = new google.maps.MVCObject();
     this.overlayMapTypes = new google.maps.MVCArray();
   }
-  public fitBounds = jest
+  public fitBounds = vi
     .fn()
     .mockImplementation(
       (
@@ -53,54 +53,54 @@ export class Map_ extends MVCObject implements google.maps.Map {
         return null;
       }
     );
-  public getBounds = jest.fn().mockImplementation(() => new LatLngBounds());
-  public getCenter = jest
+  public getBounds = vi.fn().mockImplementation(() => new LatLngBounds());
+  public getCenter = vi
     .fn()
     .mockImplementation(
       (): google.maps.LatLng => new LatLng({ lat: 0, lng: 0 })
     );
-  public getClickableIcons = jest.fn().mockImplementation((): boolean => false);
-  public getDiv = jest.fn().mockImplementation((): Element => {
-    return jest.fn() as unknown as Element;
+  public getClickableIcons = vi.fn().mockImplementation((): boolean => false);
+  public getDiv = vi.fn().mockImplementation((): Element => {
+    return vi.fn() as unknown as Element;
   });
-  public getHeading = jest.fn().mockImplementation((): number => 0);
-  public getMapTypeId = jest
+  public getHeading = vi.fn().mockImplementation((): number => 0);
+  public getMapTypeId = vi
     .fn()
     .mockImplementation(
       (): google.maps.MapTypeId => google.maps.MapTypeId.ROADMAP
     );
-  public getProjection = jest
+  public getProjection = vi
     .fn()
-    .mockImplementation((): google.maps.Projection | null => jest.fn() as null);
-  public getRenderingType = jest
+    .mockImplementation((): google.maps.Projection | null => vi.fn() as null);
+  public getRenderingType = vi
     .fn()
     .mockImplementation(
       (): google.maps.RenderingType => google.maps.RenderingType.RASTER
     );
-  public getStreetView = jest
+  public getStreetView = vi
     .fn()
     .mockImplementation(
       (): google.maps.StreetViewPanorama =>
-        jest.fn() as unknown as google.maps.StreetViewPanorama
+        vi.fn() as unknown as google.maps.StreetViewPanorama
     );
-  public getTilt = jest.fn().mockImplementation((): number => 0);
-  public getZoom = jest.fn().mockImplementation((): number => 0);
-  public moveCamera = jest
+  public getTilt = vi.fn().mockImplementation((): number => 0);
+  public getZoom = vi.fn().mockImplementation((): number => 0);
+  public moveCamera = vi
     .fn()
     .mockImplementation((cameraOptions: google.maps.CameraOptions): void => {
       return null;
     });
-  public panBy = jest.fn().mockImplementation((x: number, y: number): void => {
+  public panBy = vi.fn().mockImplementation((x: number, y: number): void => {
     return null;
   });
-  public panTo = jest
+  public panTo = vi
     .fn()
     .mockImplementation(
       (latLng: google.maps.LatLng | google.maps.LatLngLiteral): void => {
         return null;
       }
     );
-  public panToBounds = jest
+  public panToBounds = vi
     .fn()
     .mockImplementation(
       (
@@ -112,38 +112,38 @@ export class Map_ extends MVCObject implements google.maps.Map {
         return null;
       }
     );
-  public setCenter = jest
+  public setCenter = vi
     .fn()
     .mockImplementation(
       (latlng: google.maps.LatLng | google.maps.LatLngLiteral): void => {
         return null;
       }
     );
-  public setHeading = jest.fn().mockImplementation((heading: number): void => {
+  public setHeading = vi.fn().mockImplementation((heading: number): void => {
     return null;
   });
-  public setMapTypeId = jest
+  public setMapTypeId = vi
     .fn()
     .mockImplementation((mapTypeId: google.maps.MapTypeId | string): void => {
       return null;
     });
-  public setOptions = jest
+  public setOptions = vi
     .fn()
     .mockImplementation((options: google.maps.MapOptions): void => {
       return null;
     });
-  public setStreetView = jest
+  public setStreetView = vi
     .fn()
     .mockImplementation((panorama: google.maps.StreetViewPanorama): void => {
       return null;
     });
-  public setTilt = jest.fn().mockImplementation((tilt: number): void => {
+  public setTilt = vi.fn().mockImplementation((tilt: number): void => {
     return null;
   });
-  public setZoom = jest.fn().mockImplementation((zoom: number): void => {
+  public setZoom = vi.fn().mockImplementation((zoom: number): void => {
     return null;
   });
-  public setClickableIcons = jest
+  public setClickableIcons = vi
     .fn()
     .mockImplementation((clickable: boolean): void => {
       return null;

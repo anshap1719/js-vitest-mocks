@@ -1,21 +1,21 @@
 {
-  "name": "@googlemaps/jest-mocks",
-  "version": "2.7.6",
+  "name": "@anshulsanghi/googlemaps-vitest-mocks",
+  "version": "1.0.0",
   "keywords": [
     "google",
     "maps",
-    "jest"
+    "vitest"
   ],
-  "homepage": "https://github.com/googlemaps/js-jest-mocks",
+  "homepage": "https://github.com/anshap1719/js-vitest-mocks",
   "bugs": {
-    "url": "https://github.com/googlemaps/js-jest-mocks/issues"
+    "url": "https://github.com/anshap1719/js-vitest-mocks/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/googlemaps/js-jest-mocks.git"
+    "url": "https://github.com/anshap1719/js-vitest-mocks.git"
   },
   "license": "Apache-2.0",
-  "author": "Justin Poehnelt",
+  "author": "Anshul Sanghi",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -26,25 +26,23 @@
     "format": "eslint . --fix",
     "lint": "eslint .",
     "prepare": "rm -rf dist && rollup -c",
-    "test": "jest src/*",
-    "test:watch": "jest --watch src/*"
+    "test": "vitest run src/*",
+    "test:watch": "vitest --watch src/*"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.4.0",
     "@types/google.maps": "^3.49.1",
-    "@types/jest": "^27.4.1",
+    "@types/node": "^18.7.14",
     "@typescript-eslint/eslint-plugin": ">=4.33.0",
     "@typescript-eslint/parser": ">=4.33.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-jest": "^27.0.1",
     "eslint-plugin-prettier": "^4.2.1",
-    "jest": "^27.5.1",
     "prettier": "^2.7.1",
     "rollup": "^2.78.1",
-    "ts-jest": "^27.1.4",
     "typedoc": "^0.23.11",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "vitest": "^0.22.1"
   },
   "publishConfig": {
     "access": "public",

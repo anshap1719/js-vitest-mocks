@@ -40,13 +40,13 @@ export class MVCObject implements google.maps.MVCObject {
     MVCObject._mockClasses.push(ctor);
   }
 
-  public addListener = jest
+  public addListener = vi
     .fn()
     .mockImplementation(
       (eventName: string, handler: Function): google.maps.MapsEventListener =>
         MapsEventListener
     );
-  public bindTo = jest
+  public bindTo = vi
     .fn()
     .mockImplementation(
       (
@@ -56,15 +56,15 @@ export class MVCObject implements google.maps.MVCObject {
         noNotify?: boolean
       ): void => null
     );
-  public changed = jest.fn().mockImplementation((key: string): void => null);
-  public get = jest.fn().mockImplementation((key: string): any => {});
-  public notify = jest.fn().mockImplementation((key: string): void => null);
-  public set = jest
+  public changed = vi.fn().mockImplementation((key: string): void => null);
+  public get = vi.fn().mockImplementation((key: string): any => {});
+  public notify = vi.fn().mockImplementation((key: string): void => null);
+  public set = vi
     .fn()
     .mockImplementation((key: string, value: any): void => null);
-  public setValues = jest.fn().mockImplementation((values: any): void => null);
-  public unbind = jest.fn().mockImplementation((key: string): void => null);
-  public unbindAll = jest.fn().mockImplementation(() => null);
+  public setValues = vi.fn().mockImplementation((values: any): void => null);
+  public unbind = vi.fn().mockImplementation((key: string): void => null);
+  public unbindAll = vi.fn().mockImplementation((): null => null);
 }
 
 // if running a test that supports afterEach, then we will cleanup the instances

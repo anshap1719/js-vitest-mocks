@@ -16,28 +16,26 @@
 
 export class Feature implements google.maps.Data.Feature {
   constructor(options?: google.maps.Data.FeatureOptions | null) {}
-  public forEachProperty = jest
+  public forEachProperty = vi
     .fn()
     .mockImplementation((callback: (a: any, b: string) => void) => {
       return null;
     });
-  public getGeometry = jest
+  public getGeometry = vi
     .fn()
     .mockImplementation((): google.maps.Data.Geometry | null => {
       return null;
     });
-  public getId = jest
-    .fn()
-    .mockImplementation((): number | string | undefined => {
-      return "1";
-    });
-  public getProperty = jest.fn().mockImplementation((name: string): any => {
+  public getId = vi.fn().mockImplementation((): number | string | undefined => {
+    return "1";
+  });
+  public getProperty = vi.fn().mockImplementation((name: string): any => {
     return undefined;
   });
-  public removeProperty = jest.fn().mockImplementation((name: string): void => {
+  public removeProperty = vi.fn().mockImplementation((name: string): void => {
     return null;
   });
-  public setGeometry = jest
+  public setGeometry = vi
     .fn()
     .mockImplementation(
       (
@@ -50,12 +48,12 @@ export class Feature implements google.maps.Data.Feature {
         return null;
       }
     );
-  public setProperty = jest
+  public setProperty = vi
     .fn()
     .mockImplementation((name: string, newValue: any): void => {
       return null;
     });
-  public toGeoJson = jest
+  public toGeoJson = vi
     .fn()
     .mockImplementation((callback: (a: object) => void): void => {
       return null;

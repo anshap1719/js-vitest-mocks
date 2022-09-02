@@ -8,7 +8,8 @@
     "esModuleInterop": true,
     "lib": ["DOM", "ESNext", "ES2019"],
     "target": "ES6",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "types": ["vitest/globals", "@types/google.maps"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "./dist"]

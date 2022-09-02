@@ -26,37 +26,35 @@ export class Autocomplete
   ) {
     super();
   }
-  public getBounds = jest
+  public getBounds = vi
     .fn()
     .mockImplementation(
       (): google.maps.LatLngBounds | null | undefined => null
     );
-  public getFields = jest.fn().mockImplementation((): string[] => []);
-  public getPlace = jest
+  public getFields = vi.fn().mockImplementation((): string[] => []);
+  public getPlace = vi
     .fn()
     .mockImplementation(
       (): google.maps.places.PlaceResult =>
         ({ name: "" } as google.maps.places.PlaceResult)
     );
-  public setBounds = jest
+  public setBounds = vi
     .fn()
     .mockImplementation(
       (
         bounds: google.maps.LatLngBounds | google.maps.LatLngBoundsLiteral
       ): void => {}
     );
-  public setComponentRestrictions = jest
+  public setComponentRestrictions = vi
     .fn()
     .mockImplementation(
       (restrictions: google.maps.places.ComponentRestrictions): void => {}
     );
-  public setFields = jest
-    .fn()
-    .mockImplementation((fields: string[]): void => {});
-  public setOptions = jest
+  public setFields = vi.fn().mockImplementation((fields: string[]): void => {});
+  public setOptions = vi
     .fn()
     .mockImplementation(
       (options: google.maps.places.AutocompleteOptions): void => {}
     );
-  public setTypes = jest.fn().mockImplementation((types: string[]): void => {});
+  public setTypes = vi.fn().mockImplementation((types: string[]): void => {});
 }

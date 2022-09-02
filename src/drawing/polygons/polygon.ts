@@ -21,37 +21,37 @@ export class Polygon extends MVCObject implements google.maps.Polygon {
     super();
   }
 
-  public getDraggable = jest.fn().mockImplementation((): boolean => false);
-  public getEditable = jest.fn().mockImplementation((): boolean => false);
-  public getMap = jest
+  public getDraggable = vi.fn().mockImplementation((): boolean => false);
+  public getEditable = vi.fn().mockImplementation((): boolean => false);
+  public getMap = vi
     .fn()
     .mockImplementation((): google.maps.Map => ({} as google.maps.Map));
-  public getPath = jest
+  public getPath = vi
     .fn()
     .mockImplementation(
       (): google.maps.MVCArray<google.maps.LatLng> =>
         ({} as google.maps.MVCArray<google.maps.LatLng>)
     );
-  public getPaths = jest
+  public getPaths = vi
     .fn()
     .mockImplementation(
       (): google.maps.MVCArray<google.maps.MVCArray<google.maps.LatLng>> =>
         ({} as google.maps.MVCArray<google.maps.MVCArray<google.maps.LatLng>>)
     );
-  public getVisible = jest.fn().mockImplementation((): boolean => false);
-  public setDraggable = jest
+  public getVisible = vi.fn().mockImplementation((): boolean => false);
+  public setDraggable = vi
     .fn()
     .mockImplementation((draggable: boolean): void => {});
-  public setEditable = jest
+  public setEditable = vi
     .fn()
     .mockImplementation((editable: boolean): void => {});
-  public setMap = jest
+  public setMap = vi
     .fn()
     .mockImplementation((map: google.maps.Map): void => {});
-  public setOptions = jest
+  public setOptions = vi
     .fn()
     .mockImplementation((options: google.maps.PolygonOptions): void => {});
-  public setPath = jest
+  public setPath = vi
     .fn()
     .mockImplementation(
       (
@@ -61,7 +61,7 @@ export class Polygon extends MVCObject implements google.maps.Polygon {
           | google.maps.LatLngLiteral[]
       ): void => {}
     );
-  public setPaths = jest
+  public setPaths = vi
     .fn()
     .mockImplementation(
       (
@@ -74,7 +74,7 @@ export class Polygon extends MVCObject implements google.maps.Polygon {
           | google.maps.LatLngLiteral[]
       ): void => {}
     );
-  public setVisible = jest
+  public setVisible = vi
     .fn()
     .mockImplementation((visible: boolean): void => {});
 }

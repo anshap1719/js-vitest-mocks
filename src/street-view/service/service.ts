@@ -22,7 +22,7 @@ export class StreetViewService implements google.maps.StreetViewService {
   constructor() {
     __registerMockInstance(this.constructor, this);
   }
-  public getPanorama = jest
+  public getPanorama = vi
     .fn()
     .mockImplementation(
       (

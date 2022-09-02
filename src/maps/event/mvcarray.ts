@@ -21,19 +21,19 @@ export class MVCArray<T> extends MVCObject implements google.maps.MVCArray<T> {
     super();
   }
 
-  public clear = jest.fn().mockImplementation((): void => {});
-  public forEach = jest
+  public clear = vi.fn().mockImplementation((): void => {});
+  public forEach = vi
     .fn()
     .mockImplementation((callback: (elem: T, i: number) => void): void => {});
 
-  public getArray = jest.fn().mockImplementation((): T[] => []);
-  public getAt = jest.fn().mockImplementation((i: number): T => ({} as T));
-  public getLength = jest.fn().mockImplementation((): number => 0);
-  public insertAt = jest
+  public getArray = vi.fn().mockImplementation((): T[] => []);
+  public getAt = vi.fn().mockImplementation((i: number): T => ({} as T));
+  public getLength = vi.fn().mockImplementation((): number => 0);
+  public insertAt = vi
     .fn()
     .mockImplementation((i: number, elem: T): void => {});
-  public pop = jest.fn().mockImplementation((): T => ({} as T));
-  public push = jest.fn().mockImplementation((elem: T): number => 0);
-  public removeAt = jest.fn().mockImplementation((i: number): T => ({} as T));
-  public setAt = jest.fn().mockImplementation((i: number, elem: T): void => {});
+  public pop = vi.fn().mockImplementation((): T => ({} as T));
+  public push = vi.fn().mockImplementation((elem: T): number => 0);
+  public removeAt = vi.fn().mockImplementation((i: number): T => ({} as T));
+  public setAt = vi.fn().mockImplementation((i: number, elem: T): void => {});
 }

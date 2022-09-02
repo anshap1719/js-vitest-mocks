@@ -20,10 +20,10 @@ export class StreetViewCoverageLayer
   extends MVCObject
   implements google.maps.StreetViewCoverageLayer
 {
-  public getMap = jest
+  public getMap = vi
     .fn()
     .mockImplementation((): google.maps.Map | null => null);
-  public setMap = jest
+  public setMap = vi
     .fn()
     .mockImplementation((map: google.maps.Map | null): void => null);
 }
